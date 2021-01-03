@@ -1,0 +1,6 @@
+Problem: If we use simple div tag in return, and wrap all other tags inside that div. Then this div adds an
+         single extra node to our react tree.
+
+Solution: To resolve this issue React gives React.Fragment which will not react unnecessary div node in the dom
+          React.Fragment take one argument "key" which help React to iterate over the array of element. React 
+          will keep track of whether the element is add, removed or modified.
