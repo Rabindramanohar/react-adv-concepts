@@ -1,0 +1,32 @@
+                                                HOC
+Problem: Sometimes we have to write same logic in many components, also in fetching data we have to fetch in
+         each components if you don't pass props.      
+
+Solution: A Higher Order Component(HOC) is a advanced technique in React for reusing component logic. HOC 
+          is a function that takes a component and returns a new component.
+
+Syntax: HOCs are not part of the React API. They are pattern that emerges from React's compositional nature.
+
+    const EnhancedComponent = higherOrderComponent(WrappedComponent);
+
+    where, higherOrderComponent is HOC comoponent that add some additional functionality to original component
+    which is WrappedComponent and returns an enhanced WrappedComponent.
+
+                                        HOC in simple terms
+1. It is a Component
+2. Which takes two agrugments, first is component and 2nd is data.
+3. Then it return a new Component.
+4. The return comoponent is enhanced version of comoponent that we have passed.    
+
+
+
+                                    HOC Use Cases
+
+1. Loading Screen until component fetches data.
+2. In Styling component.
+3. Providing specific data or props to component etc..
+
+Notes:
+1. Avoid using HOC inside render method
+2. Static method must be copied over
+3. Refs Aren't Passed Through

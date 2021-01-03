@@ -1,0 +1,31 @@
+Problem: React Components render method re-render Component even if we pass same prop and state.
+         So app perfomance slightly decrease.
+
+Solution: React.PureComponent is same subclass like React.Components but it is only render component when there
+          is a difference between current and previous states and props.
+
+Syntax: class Example extends React.PureComponent {
+    render() {
+        return(
+            <h1>Hello {this.props.name}</h1>
+        )
+    }
+}
+
+
+Note: Remember that React.PureComponent only do the shallow comparision the objects. If your states or props 
+      contains complex data structure, it may produce false-negative for deeper difference.
+
+Shallow Compare: 
+    It performs shallow equallity (===) check on the current  props  and the next props objects as well as 
+    current state and next state objects.
+
+    It does this by iterating on the keys  of the objects being compared and returnint true when the value  of
+    a key in each object are not strictly equal.
+
+    Shallow compare works by checking if two values are equal in case of primitive type like string, number and 
+    in case of objects it just check the reference. So if you shallow compare a deep nested object it will just
+    check the reference not the values inside that object.  
+
+When to use PureComponent: Only use PureComponent when you expect to have simple props and states.
+

@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import EnhancedCommentComponent from './components/PureComponent/HOC/CommentsComponents';
+import CommentsComponents from './components/PureComponent/HOC/CommentsComponents';
+import EnhancedLikeComponent from './components/PureComponent/HOC/LikeCounts';
+import LikeCounts from './components/PureComponent/HOC/LikeCounts';
+import NormalComponent from './components/PureComponent/NormalComponent';
+import PureComponents from './components/PureComponent/PureComponent';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <NormalComponent />
+      <PureComponents /> */}
+      <EnhancedLikeComponent />
+      <EnhancedCommentComponent />
+      {/* <CommentsComponents /> */}
     </div>
   );
 }
