@@ -1,0 +1,17 @@
+Problem: Access child component from parent component without re-rendering and passing props and states.
+
+Solution: Ref forwarding is a technique for automatically passing a ref through a component to one of its 
+          child. This is typically not necessary for most components in the application. However, it can be
+          useful for some kinds of components, especially in resuable component libraries.
+
+Sytax: 
+
+    Create Ref using React.createRef:
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef()
+    }
+
+    Forward Ref:
+    const RefChildDemo = React.forwardRef((props, ref) => 
+    (<button ref = {ref}>Click</button>));
