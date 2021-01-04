@@ -1,0 +1,35 @@
+Problem: JavaScript errors inside components used to corrupt React's internal state and cause it to emit cryptic
+         errors on next renders, when run time error occurs react unmount whole react tree, and show error.
+
+Solution: Error boundries are React components that catch JavaScript errors anywhere in their child component
+          tree, log those errors and display a fallback UI instead of the component tree that crashed.
+
+Sytax: There are two lifecycle methods available:
+
+1.
+    static getDerivedStateFromError(error) {
+        return {
+            hasError: true
+        };
+        // Update state so the next render will show the fallback UI.
+    }
+
+2.
+    componentDidCatch(error, errorInfo) {
+
+        // You can also log the error to error reporting service.
+        logErrorToMyService(error, errorInfo);
+    }
+
+
+                                    Error boundries
+Error boundries don't catch errors for:
+1. Event handler.
+2. Asynchronous code(e.g: setTimeout or requestAnimationFrame callbacks)
+3. Server side rendering
+4. Error throw Error boundries itself(rather than children).
+
+
+
+Note: A class component become error boundary by defining either or both of getDerivedStateFromError and
+      componentDidCatch lifecycle methods.

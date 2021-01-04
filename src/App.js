@@ -1,5 +1,8 @@
 import './App.css';
-import ParentRefComponent from './components/Forwarding Refs/ParentRef';
+import CounterDemoComponent from './components/Error Boundries/CounterDemo';
+import ErrorBoundriesComponent from './components/Error Boundries/ErrorBoundries';
+import ErrorDemoComponent from './components/Error Boundries/ErrorDemoComponent';
+// import ParentRefComponent from './components/Forwarding Refs/ParentRef';
 /* import FragmentDemoComponent from './components/Fragments/FragmentsDemo';
 import NormalComponent from './components/Portals/NormalComponent';
 import ParentComponent from './components/Portals/ParentComponent';
@@ -25,7 +28,13 @@ function App() {
       <PortalComponent /> */}
       {/* <ParentComponent /> */}
       {/* <RefDemoComponent /> */}
-      <ParentRefComponent />
+      {/* <ParentRefComponent /> */}
+      <ErrorBoundriesComponent>
+          <ErrorDemoComponent name = "robin" />
+      </ErrorBoundriesComponent>
+      <ErrorBoundriesComponent>
+          <CounterDemoComponent />  
+      </ErrorBoundriesComponent>
     </div>
   );
 }
