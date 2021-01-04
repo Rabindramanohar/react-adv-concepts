@@ -1,0 +1,22 @@
+Problem: Reference a DOM element without re-rendering the whole component, and without using the props and states
+
+Solution: Ref provides a way to access the DOM nodes or React elements created in the render method.
+
+Syntax:
+        Create Ref using React.createRef():
+
+        constructor(props) {
+            super(props);
+            this.myRef = React.createRef();
+        }
+
+        Accessing Ref:
+
+        render() {
+            return<div ref={this.myRef} />
+        }
+
+                            WHEN TO USE Refs
+1. Managing focus, text selection, or media playback.
+2. Triggering imperative animation.
+3. Integratingn with 3rd party DOM libraries.                        
