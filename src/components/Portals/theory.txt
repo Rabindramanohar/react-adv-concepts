@@ -1,0 +1,17 @@
+Problem: When we want to render component which may be completely separate from the original component, such 
+         as tooltips, modal etc... Its break the UI or parent div.
+
+Solution: Portals provides a good way to render children into a DOM node that exits outside the DOM hierarchy
+          of the parent component still it can use all the functionality of main DOM.
+
+Syntax: 
+        render() {
+            return ReactDOM.createPortal(
+
+                child,                    // First agrument Child represents any renderable React child such 
+                                          // as element. String or Fragment.
+
+
+                container                 // The second agrument container is a DOM element such as div.
+            )
+        }
